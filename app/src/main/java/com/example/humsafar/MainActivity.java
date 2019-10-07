@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<personalinfo> farmers = new ArrayList<>();
 
-    personalinfo a = new personalinfo("Gaurav", 965009874, "ABCD 123212", "123456");
-    
+    personalinfo a = new personalinfo("Gaurav", "965009874", "ABCD 123212", "123456");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
 
         for(personalinfo i : farmers){
-            if(i.name.equals(name)){
+            if(i.getname().equals(name)){
                 flag++;
-                if(i.password.equals(pwd)){
+                if(i.getpassword().equals(pwd)){
                     Toast toast = Toast.makeText(context, "Authenticated", Toast.LENGTH_SHORT);
                     toast.show();
                 }
