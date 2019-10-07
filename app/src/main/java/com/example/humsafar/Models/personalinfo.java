@@ -1,13 +1,15 @@
 package com.example.humsafar.Models;
 
 public class personalinfo {
-    protected String name;
+    public String name;
     protected long phoneno;
     protected String address;
+    public String password;
 
-    personalinfo(String name, long phoneno, String address){
+    public personalinfo(String name, long phoneno, String address, String pwd){
         this.name = name;
         this.phoneno = phoneno;
         this.address = address;
+        this.password = pwd;
     }
 }
