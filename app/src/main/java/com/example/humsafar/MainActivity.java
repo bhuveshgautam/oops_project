@@ -2,25 +2,53 @@ package com.example.humsafar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.humsafar.Models.personalinfo;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<personalinfo> farmers = new ArrayList<>();
+
+    personalinfo a = new personalinfo("Gaurav", 965009874, "ABCD 123212", "123456");
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        farmers.add(a);
     }
 
-    public void addData(){
+    public void onClick(View view){
+        EditText txtname = findViewById(R.id.username);
+        EditText txtpwd = findViewById(R.id.password);
+        String name = txtname.getText().toString();
+        String pwd = txtpwd.getText().toString();
+        int flag = 0;
+        Context context = getApplicationContext();
 
-    }
-
-    public void getData(){
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        long phoneno = intent.getLongExtra("phoneno", 0);
-        String ans = intent.getStringExtra("address");
+        for(personalinfo i : farmers){
+            if(i.name.equals(name)){
+                flag++;
+                if(i.password.equals(pwd)){
+                    Toast toast = Toast.makeText(context, "Authenticated", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else{
+                    Toast toast = Toast.makeText(context, "Wrong password", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        }
+        if(flag == 0){
+            Toast toast = Toast.makeText(context, "No such user", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 }
