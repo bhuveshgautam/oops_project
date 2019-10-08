@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         textview.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, Registration.class);
+//                Bundle args = new Bundle();
+//                args.putSerializable("farmers", farmers);
+//                intent.putExtra("Bundle", args);
                 startActivity(intent);
             }
         });
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         int flag = 0;
         Context context = getApplicationContext();
 
-        for(personalinfo i : farmers){
+        for(personalinfo i : personalinfo.farmers){
             if(i.getname().equals(name)){
                 flag++;
                 if(i.getpassword().equals(pwd)){
