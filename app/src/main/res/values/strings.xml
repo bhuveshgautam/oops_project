@@ -11,4 +11,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="registerhere">RegisterHere</string>
     <string name="sign_in">SIGN IN</string>
+    <string name="register_here">Register here</string>
 </resources>
