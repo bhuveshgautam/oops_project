@@ -3,9 +3,12 @@ package com.example.humsafar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.humsafar.Models.personalinfo;
@@ -23,9 +26,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         farmers.add(a);
+        TextView textview = (TextView)findViewById(R.id.textView);
+
+        textview.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, Registration.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void onClick(View view){
+    public void Login(View view){
         EditText txtname = findViewById(R.id.username);
         EditText txtpwd = findViewById(R.id.password);
         String name = txtname.getText().toString();

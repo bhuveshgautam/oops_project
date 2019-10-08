@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".Registration">
 
     <TextView
         android:id="@+id/textView2"
@@ -28,13 +28,13 @@
 
     <EditText
         android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         android:text="Postal Address"
         tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="307dp" />
+        tools:layout_editor_absoluteY="273dp" />
 
     <EditText
         android:id="@+id/editText6"
@@ -44,7 +44,7 @@
         android:inputType="phone"
         android:text="Phone"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="380dp" />
+        tools:layout_editor_absoluteY="343dp" />
 
     <EditText
         android:id="@+id/editText7"
@@ -54,7 +54,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="229dp" />
+        tools:layout_editor_absoluteY="210dp" />
 
     <Button
         android:id="@+id/button"
