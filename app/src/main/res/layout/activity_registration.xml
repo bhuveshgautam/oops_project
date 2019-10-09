@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bg"
     tools:context=".Registration">
 
     <TextView
@@ -14,17 +14,19 @@
         android:text="Registration Page"
         android:textSize="36sp"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="33dp" />
+        tools:layout_editor_absoluteY="33dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
         tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="125dp" />
+        tools:layout_editor_absoluteY="162dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editText5"
@@ -32,50 +34,16 @@
         android:layout_height="45dp"
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
-        android:layout_marginTop="18dp"
         android:layout_marginEnd="86dp"
         android:layout_marginRight="86dp"
-        android:layout_marginBottom="25dp"
         android:ems="10"
+        android:hint="Postal Address"
         android:inputType="textPostalAddress"
-        android:text="Postal Address"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="87dp"
-        android:layout_marginRight="87dp"
-        android:layout_marginBottom="67dp"
-        android:ems="10"
-        android:inputType="phone"
-        android:text="Phone"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        tools:layout_editor_absoluteY="306dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
@@ -83,7 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="143dp"
         android:layout_marginRight="143dp"
         android:layout_marginBottom="205dp"
@@ -91,8 +58,29 @@
         android:text="Register Here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Number"
+        android:inputType="numberSigned"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="383dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Password"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="223dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
