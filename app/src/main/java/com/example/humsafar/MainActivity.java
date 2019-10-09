@@ -18,21 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<personalinfo> farmers = new ArrayList<>();
 
-    personalinfo a = new personalinfo("Gaurav", "965009874", "ABCD 123212", "123456");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        farmers.add(a);
         TextView textview = (TextView)findViewById(R.id.textView);
-
+        personalinfo.loadData(getApplicationContext(), "farmers");
         textview.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, Registration.class);
-//                Bundle args = new Bundle();
-//                args.putSerializable("farmers", farmers);
-//                intent.putExtra("Bundle", args);
                 startActivity(intent);
             }
         });

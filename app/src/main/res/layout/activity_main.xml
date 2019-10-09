@@ -9,9 +9,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"><![CDATA[
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
-    ]]><EditText
+    <EditText
     android:id="@+id/username"
     android:hint="Username"
     android:layout_width="0dp"
@@ -102,6 +102,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" /><![CDATA[
+        tools:ignore="MissingConstraints" />
 
-]]>
+</androidx.constraintlayout.widget.ConstraintLayout>

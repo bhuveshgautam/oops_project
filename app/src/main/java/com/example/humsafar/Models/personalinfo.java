@@ -1,6 +1,16 @@
 package com.example.humsafar.Models;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class personalinfo {
     protected String name;
@@ -27,5 +37,15 @@ public class personalinfo {
 
     public static void registerUser(personalinfo user){
         farmers.add(user);
+    }
+
+    public static void loadData(Context context, String key){
+        SharedPreferences sharedpreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedpreferences.getString(key, null);
+        Type type = new TypeToken<ArrayList<personalinfo>>(){}.getType();
+        farmers = gson.fromJson(json, type);
+        if(farmers == null)
+            farmers = new ArrayList<>();
     }
 }
