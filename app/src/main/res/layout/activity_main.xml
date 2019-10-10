@@ -13,7 +13,7 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="331dp"
+        android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
@@ -34,7 +34,7 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="331dp"
+        android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
