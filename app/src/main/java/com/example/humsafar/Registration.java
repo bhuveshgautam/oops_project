@@ -43,6 +43,8 @@ public class Registration extends AppCompatActivity {
         personalinfo.registerUser(farmer);
 
         updatefile("farmers", personalinfo.farmers);
+        Intent intent = new Intent(Registration.this, Info.class);
+        startActivity(intent);
     }
 
     public void updatefile(String key, ArrayList<personalinfo> list){

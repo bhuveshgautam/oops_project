@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         EditText txtpwd = findViewById(R.id.password);
         String name = txtname.getText().toString();
         String pwd = txtpwd.getText().toString();
-        int flag = 0;
         Context context = getApplicationContext();
+        int flag = 0;
 
         for(personalinfo i : personalinfo.farmers){
             if(i.getname().equals(name)){
@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 if(i.getpassword().equals(pwd)){
                     Toast toast = Toast.makeText(context, "Authenticated", Toast.LENGTH_SHORT);
                     toast.show();
+
+                    Intent intent = new Intent(MainActivity.this, Info.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast toast = Toast.makeText(context, "Wrong password", Toast.LENGTH_SHORT);
