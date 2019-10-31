@@ -29,10 +29,13 @@ public class Status extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.listview);
         ArrayList<personalinfo> list = new ArrayList<>();
         for(personalinfo farmer : farmers){
-            if(farmer.getCarriage().getDestination().equals(destination)){
+            if(farmer.hasCarriage() && farmer.getCarriage().getDestination().equals(destination)){
                 list.add(farmer);
             }
         }
-        
+        CustomAdapter adapter = new CustomAdapter(list, getApplicationContext());
+
+        listview.setAdapter(adapter);
+
     }
 }

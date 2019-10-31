@@ -47,6 +47,8 @@ public class personalinfo {
 
     public String getPhoneno() { return this.phoneno; }
 
+    public String getAddress() { return this.address; }
+
     public int getKey() { return this.key; }
 
     public float getCapacity() { return this.carriage.capacity; }

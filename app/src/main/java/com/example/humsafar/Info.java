@@ -79,7 +79,8 @@ public class Info extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.action_status){
             Intent intent = new Intent(Info.this, Status.class);
-            intent.putExtra("Destination", farmers.get(key).getCarriage().getDestination());
+            if(farmers.get(key).hasCarriage())
+                intent.putExtra("Destination", farmers.get(key).getCarriage().getDestination());
             startActivity(intent);
         }
         return true;
