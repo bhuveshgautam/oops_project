@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,6 +57,10 @@ public class Info extends AppCompatActivity {
             txt.setKeyListener(null);
             txt.setText(Float.toString(farmer.getCapacity()));
             txt.setBackgroundColor(Color.TRANSPARENT);
+
+            dropdown.setEnabled(false);
+            int index = adapter.getPosition(farmer.getCarriage().getDestination());
+            dropdown.setSelection(index);
         }
 
         TextView textview = (TextView) findViewById(R.id.textView6);
@@ -115,6 +120,8 @@ public class Info extends AppCompatActivity {
             txtcapacity.setText(Float.toString(farmer.getCapacity()));
             txtcapacity.setBackgroundColor(Color.TRANSPARENT);
 
+            spinner.setEnabled(false);
+
             updatefile("farmers", farmers);
         }
         else{
@@ -133,6 +140,27 @@ public class Info extends AppCompatActivity {
         String json = gson.toJson(list);
         editor.putString(key, json);
         editor.apply();
+    }
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            finish();
+            moveTaskToBack(true);
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
 }
