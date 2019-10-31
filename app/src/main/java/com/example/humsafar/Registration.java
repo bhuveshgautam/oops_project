@@ -23,6 +23,8 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
     }
 
+    protected static ArrayList<personalinfo> farmers = personalinfo.getList();
+
     public void Register(View view){
 
         EditText txtname = findViewById(R.id.editText2);
@@ -42,8 +44,9 @@ public class Registration extends AppCompatActivity {
 
         personalinfo.registerUser(farmer);
 
-        updatefile("farmers", personalinfo.farmers);
+        updatefile("farmers", farmers);
         Intent intent = new Intent(Registration.this, Info.class);
+        intent.putExtra("User", farmer.getKey());
         startActivity(intent);
     }
 

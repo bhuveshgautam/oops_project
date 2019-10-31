@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         int flag = 0;
 
-        for(personalinfo i : personalinfo.farmers){
+        for(personalinfo i : personalinfo.getList()){
             if(i.getname().equals(name)){
                 flag++;
                 if(i.getpassword().equals(pwd)){
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
 
                     Intent intent = new Intent(MainActivity.this, Info.class);
+                    intent.putExtra("User", i.getKey());
                     startActivity(intent);
                 }
                 else{
