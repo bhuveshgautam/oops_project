@@ -1,8 +1,8 @@
 package com.example.humsafar.Models;
 
 public class Commodity{
-    public String name;
-    public float Quantity;
+    protected String name;
+    protected float Quantity;
 
     public Commodity() {}
 
@@ -10,5 +10,9 @@ public class Commodity{
         this.name = name;
         this.Quantity = size;
     }
+
+    public String getName() { return this.name; }
+
+    public float getQuantity() { return this.Quantity; }
 }
 

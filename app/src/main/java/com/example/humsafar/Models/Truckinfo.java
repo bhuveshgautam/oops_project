@@ -31,4 +31,6 @@ public class Truckinfo {
     public String getDestination() { return this.destination; }
 
     public ArrayList<Commodity> getList() { return this.data; }
+
+    public String getFreeSpace() { return Float.toString(this.freespace); }
 }
