@@ -147,13 +147,14 @@ public class Info extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            finish();
-            moveTaskToBack(true);
+            Intent i = new Intent(Info.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
+        else {
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(Info.this, "Please click BACK again to Logout", Toast.LENGTH_SHORT).show();
+        }
         new Handler().postDelayed(new Runnable() {
 
             @Override

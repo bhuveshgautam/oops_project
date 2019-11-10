@@ -33,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Login(View view){
-        EditText txtname = findViewById(R.id.username);
+        EditText txtno = findViewById(R.id.mobile);
         EditText txtpwd = findViewById(R.id.password);
-        String name = txtname.getText().toString();
+        String name = txtno.getText().toString();
         String pwd = txtpwd.getText().toString();
         Context context = getApplicationContext();
         int flag = 0;
 
         for(personalinfo i : personalinfo.getList()){
-            if(i.getname().equals(name)){
+            if(i.getPhoneno().equals(name)){
                 flag++;
                 if(i.getpassword().equals(pwd)){
                     Toast toast = Toast.makeText(context, "Authenticated", Toast.LENGTH_SHORT);
