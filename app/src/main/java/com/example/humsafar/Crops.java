@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.example.humsafar.Models.Commodity;
 import com.example.humsafar.Models.personalinfo;
@@ -40,6 +41,9 @@ public class Crops extends AppCompatActivity {
         int[] to = {R.id.cropname, R.id.cropqty};
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, list, R.layout.crop_list, from, to);
         listView.setAdapter(simpleAdapter);
+
+        TextView textView = (TextView) findViewById(R.id.place);
+        textView.append(farmers.get(key).getCarriage().getFreeSpace() + " Kgs left");
 
     }
 }

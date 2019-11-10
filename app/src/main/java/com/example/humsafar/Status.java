@@ -11,10 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.humsafar.Models.personalinfo;
 import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -52,5 +55,8 @@ public class Status extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        TextView textView = (TextView) findViewById(R.id.place);
+        textView.append(destination);
     }
 }

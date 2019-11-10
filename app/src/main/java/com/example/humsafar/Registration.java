@@ -37,17 +37,30 @@ public class Registration extends AppCompatActivity {
         String add = txtadd.getText().toString();
         String phone = txtphone.getText().toString();
 
-        personalinfo farmer = new personalinfo(name, phone, add, pwd);
-        Context context = getApplicationContext();
-        Toast toast = Toast.makeText(context, "Registered", Toast.LENGTH_SHORT);
-        toast.show();
+        int flag = 0;
+        for(personalinfo farmer: farmers){
+            if(farmer.getPhoneno().equals(phone)){
+                flag++;
+                break;
+            }
+        }
+        if(flag == 0){
+            personalinfo farmer = new personalinfo(name, phone, add, pwd);
+            Context context = getApplicationContext();
+            Toast toast = Toast.makeText(context, "Registered", Toast.LENGTH_SHORT);
+            toast.show();
 
-        personalinfo.registerUser(farmer);
+            personalinfo.registerUser(farmer);
 
-        updatefile("farmers", farmers);
-        Intent intent = new Intent(Registration.this, Info.class);
-        intent.putExtra("User", farmer.getKey());
-        startActivity(intent);
+            updatefile("farmers", farmers);
+            Intent intent = new Intent(Registration.this, Info.class);
+            intent.putExtra("User", farmer.getKey());
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Duplicte", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void updatefile(String key, ArrayList<personalinfo> list){
