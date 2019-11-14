@@ -147,9 +147,9 @@ public class Info extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            Intent i = new Intent(Info.this, MainActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(i);
+            finish();
+            moveTaskToBack(true);
+
         }
         else {
             this.doubleBackToExitPressedOnce = true;
